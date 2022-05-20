@@ -41,7 +41,7 @@ body {
   border-radius: 15px;
   padding: 1em 2em;
   cursor: pointer;
-  margin-top: 1em;
+  margin-top: 2em;
 }
 
 .quiz {
@@ -53,7 +53,7 @@ body {
 
 .question {
   padding-left: 8px;
-  margin-bottom: 0;
+  margin-bottom: .5em;
 }
 
 .answers {
@@ -65,7 +65,7 @@ body {
 
 .answer {
   font-family: 'Inter';
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: #293264;
   border: 1px solid #293264;
