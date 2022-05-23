@@ -1,34 +1,58 @@
 import React from "react"
+import OpeningPage from "./components/OpeningPage"
 import Trivia from "./Trivia"
 
 export default function App (){
-    
+
     const [quizzStarted, setQuizzStarted] = React.useState(false)
-    
+    const [results, setResults] = React.useState([])
+
+
     function HandleStartClick(){
-        setQuizzStarted(true)
+        setQuizzStarted(prevMode => !prevMode)
     }
-    
+
+
+    React.useEffect(()=>{
+        fetch("https://opentdb.com/api.php?amount=5&category=27&type=multiple")
+            .then(res => res.json())
+            .then(data => data.results)
+            .then(results => {
+                let i = 0
+                const new_results = results.map(result => {
+                    const all_answers = [...result.incorrect_answers]
+                    const random_position = Math.floor(Math.random() * 3)
+                    all_answers.splice(random_position, 0, result.correct_answer)
+                    return {
+                        ...result,
+                        "all_answers": all_answers,
+                        "id": i++
+                    }
+                })
+                return new_results
+            })
+            .then(new_results => setResults(new_results))
+    }, [])
+
+
+
+
     return (
         <main>
-            <div className="yellow"></div>
             {quizzStarted ?
                 <div className="quizz-container">
-                    <Trivia />
+                    <Trivia
+                        results={results}
+                    />
                     <button className="check-btn"
                     >
                     Check answers</button>
                 </div>
                 :
-                <div className="startPage">
-                    <h1 className="quizzical">Quizzical</h1>
-                    <p className="quizzical-text">Check how much trivia you know!</p>
-                    <button className="start-btn"
-                            onClick={HandleStartClick}
-                            >Start quiz</button>
-                </div>
+                <OpeningPage 
+                    HandleStartClick={HandleStartClick}
+                />
             }
-            <div className="babyBlue"></div>
         </main>
     )
 }
