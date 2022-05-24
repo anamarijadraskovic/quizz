@@ -11,6 +11,11 @@ export default function QA(props){
             setIsCorrect(true)
         }
     }, [ansClicked])
+
+    React.useEffect(() => {
+        if (props.quizEnded === true)
+            props.checkFinalResults(isCorrect)
+    }, [props.quizEnded])
     
     function handleClickedAnswer(id){
         setAnsClicked(id)

@@ -44,9 +44,6 @@ export default function App (){
                     <Trivia
                         results={results}
                     />
-                    <button className="check-btn"
-                    >
-                    Check answers</button>
                 </div>
                 :
                 <OpeningPage 
