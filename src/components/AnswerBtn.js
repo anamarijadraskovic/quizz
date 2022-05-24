@@ -1,14 +1,10 @@
 import React from "react"
 
 export default function AnswerBtn(props){
-    const [answerClicked, setAnswerClicked] = React.useState(false)
-    function handleClickedAnswer(){
-        setAnswerClicked(prevVer => !prevVer)
-    }
     return (
-        <button className={answerClicked? "answer answer-clicked": "answer"} 
-                key={props.ans}
-                onClick={handleClickedAnswer}>
+        <button className={props.id === props.ansClicked ? "answer answer-clicked": "answer"} 
+                key={props.id}
+                onClick={() => props.handleClick(props.id)}>
                 {props.ans}
         </button>
     )

@@ -7,6 +7,7 @@ export default function Trivia(props){
     const QAs = props.results.map(res => {
         return (<QA 
                     result={res}
+                    key={res.id}
                 />)})
     
     return (

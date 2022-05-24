@@ -78,4 +78,5 @@ body {
 
 .answer-clicked {
   background-color: #D6DBF5;
+  border: none;
 }
