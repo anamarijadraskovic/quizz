@@ -4,6 +4,13 @@ import AnswerBtn from "./AnswerBtn"
 export default function QA(props){
 
     const [ansClicked, setAnsClicked] = React.useState()
+    const [isCorrect, setIsCorrect] = React.useState(false)
+
+    React.useEffect(() => {
+        if (props.result.correct_answer === props.result.all_answers[ansClicked]) {
+            setIsCorrect(true)
+        }
+    }, [ansClicked])
     
     function handleClickedAnswer(id){
         setAnsClicked(id)
