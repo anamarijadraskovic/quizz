@@ -21,9 +21,12 @@ export default function QA(props){
         setAnsClicked(id)
     }
 
+    var rawQuestion = props.result.question
+    var question = rawQuestion.replace(/&quot;|&#039;/g, "'" )
+
     return  (
         <div className="quiz" key={props.result.id}>
-            <h3 className="question">{props.result.question}</h3>
+            <h3 className="question">{question}</h3>
             <div className="answers">
                 {props.result.all_answers.map((ans, i)  => <AnswerBtn 
                                                         key={ans}

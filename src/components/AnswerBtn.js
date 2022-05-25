@@ -18,11 +18,14 @@ export default function AnswerBtn(props){
         return "answer not-chosen"
     }
 
+    var rawAnswer = props.ans
+    var answer = rawAnswer.replace(/&quot;|&#039;/g, "'" )
+
     return (
         <button className={setClassName()} 
                 key={props.id}
                 onClick={() => props.handleClick(props.id)}>
-                {props.ans}
+                {answer}
         </button>
     )
 }
