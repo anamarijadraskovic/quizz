@@ -41,6 +41,10 @@ body {
   border-radius: 15px;
   padding: 1em 2em;
   cursor: pointer;
+}
+
+.start-btn,
+footer {
   margin-top: 2em;
 }
 
@@ -79,4 +83,32 @@ body {
 .answer-clicked {
   background-color: #D6DBF5;
   border: none;
+}
+
+.score {
+  font-weight: 700;
+  color: #293264;
+  margin-right: 2em;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+}
+
+.correct-answers {
+  font-weight: 500;
+  background-color: #94D7A2;
+  border: none;
+}
+
+.clicked-incorrect {
+  font-weight: 500;
+  background-color: #F8BCBC;
+  border: none;
+  opacity: 0.5;
+}
+
+.not-chosen {
+  opacity: 0.5;
 }

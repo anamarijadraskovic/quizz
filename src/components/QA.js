@@ -20,6 +20,7 @@ export default function QA(props){
     function handleClickedAnswer(id){
         setAnsClicked(id)
     }
+    console.log(props.result.correct_answer)
 
     return  (
         <div className="quiz" key={props.result.id}>
@@ -31,6 +32,9 @@ export default function QA(props){
                                                         ans={ans}
                                                         ansClicked={ansClicked}
                                                         handleClick={handleClickedAnswer}
+                                                        quizEnded={props.quizEnded}
+                                                        isCorrect={isCorrect}
+                                                        correctAnswer={props.result.correct_answer}
                                                 />)}
             </div>
         </div>

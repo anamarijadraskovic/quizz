@@ -6,15 +6,14 @@ export default function App (){
 
     const [quizzStarted, setQuizzStarted] = React.useState(false)
     const [results, setResults] = React.useState([])
-
+    const [quizEnded, setQuizEnded] = React.useState(false)
 
     function HandleStartClick(){
         setQuizzStarted(prevMode => !prevMode)
     }
 
-
     React.useEffect(()=>{
-        fetch("https://opentdb.com/api.php?amount=5&category=27&type=multiple")
+        fetch("https://opentdb.com/api.php?amount=5&difficulty=medium")
             .then(res => res.json())
             .then(data => data.results)
             .then(results => {
@@ -34,15 +33,14 @@ export default function App (){
             .then(new_results => setResults(new_results))
     }, [])
 
-
-
-
     return (
         <main>
             {quizzStarted ?
                 <div className="quizz-container">
                     <Trivia
                         results={results}
+                        quizEnded={quizEnded}
+                        setQuizEnded={setQuizEnded}
                     />
                 </div>
                 :
