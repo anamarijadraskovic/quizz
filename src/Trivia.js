@@ -5,6 +5,7 @@ export default function Trivia(props){
     
     const[quizEnded, setQuizEnded] = React.useState(false)
     const[QAisCorrect, setQAisCorrect] = React.useState([])
+    const[numCorrect, setNumCorrect] = React.useState(0)
 
     function checkFinalResults(isCorrect){
         setQAisCorrect(oldVer => [...oldVer, isCorrect])
@@ -20,6 +21,7 @@ export default function Trivia(props){
                 }
             }
             console.log(count)
+            setNumCorrect(count)
     }, [QAisCorrect])
 
     
@@ -34,10 +36,11 @@ export default function Trivia(props){
     return (
         <div>
             {QAs}
+            {quizEnded && <p>You scored {numCorrect}/{props.results.length} correct answers</p>}
             <button className="check-btn"
                     onClick={() => setQuizEnded(true)}
-            >
-            Check answers</button>
+            >Check Answers
+            </button>
         </div>
     )
 }
