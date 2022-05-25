@@ -80,7 +80,7 @@ footer {
   padding: 0.3em 0.8em;
 }
 
-.answer-clicked {
+.clicked {
   background-color: #D6DBF5;
   border: none;
 }
@@ -102,10 +102,9 @@ footer {
   border: none;
 }
 
-.clicked-incorrect {
+.incorrect {
   font-weight: 500;
   background-color: #F8BCBC;
-  border: none;
   opacity: 0.5;
 }
 

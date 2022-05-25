@@ -10,7 +10,9 @@ export default function Trivia(props){
         setQAisCorrect(oldVer => [...oldVer, isCorrect])
     }
 
-    console.log(QAisCorrect)
+    function reloadPage(){
+        window.location.reload()
+    }
 
     React.useEffect(()=>{
             let count = 0
@@ -39,6 +41,7 @@ export default function Trivia(props){
                 <footer>
                     <p className="score">You scored {numCorrect}/{props.results.length} correct answers</p>
                     <button className="check-btn"
+                            onClick={reloadPage}
                     >Play again
                     </button>
                 </footer>
