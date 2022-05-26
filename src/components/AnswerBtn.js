@@ -19,7 +19,8 @@ export default function AnswerBtn(props){
     }
 
     var rawAnswer = props.ans
-    var answer = rawAnswer.replace(/&quot;|&#039;/g, "'" )
+    var answer1 = rawAnswer.replace(/&quot;|&#039;|&deg;/g, "'" )
+    var answer = answer1.replace(/&amp;/g, "&")
 
     return (
         <button className={setClassName()} 

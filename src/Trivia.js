@@ -40,7 +40,7 @@ export default function Trivia(props){
                 ?
                 <footer>
                     <p className="score">You scored {numCorrect}/{props.results.length} correct answers</p>
-                    <button className="check-btn"
+                    <button className="play-again-btn"
                             onClick={reloadPage}
                     >Play again
                     </button>
