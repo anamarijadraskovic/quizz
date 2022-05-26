@@ -4,7 +4,7 @@ export default function AnswerBtn(props){
     
     function setClassName() {
         if (!props.quizEnded) {
-            if (props.id == props.ansClicked) {
+            if (props.id === props.ansClicked) {
                 return "answer clicked"
             }
             return "answer"
@@ -12,7 +12,7 @@ export default function AnswerBtn(props){
         if (props.ans === props.correctAnswer) {
             return "answer correct-answers"
         }
-        if (props.id == props.ansClicked)
+        if (props.id === props.ansClicked)
             return "answer clicked incorrect"
 
         return "answer not-chosen"
