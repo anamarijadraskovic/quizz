@@ -1,4 +1,4 @@
-# Trivia quiz with 5 random questions pulled from open API.
+# Trivia quiz with 5 random questions pulled from open API
 
 Play it [here](https://quizzical-3fb03.web.app/)
 
@@ -10,7 +10,7 @@ App is written in React, HTML, and CSS.
 - React
 - Git
 - GitHub
----
+
 ### React functions used:
 - useState
 - useEffect
