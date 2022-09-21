@@ -11,7 +11,7 @@ App is written in React, HTML, and CSS.
 - Git
 - GitHub
 
-### React functions used:
+## React functions used:
 - useState
 - useEffect
 - props
