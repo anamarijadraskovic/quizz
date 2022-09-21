@@ -8,10 +8,11 @@ App is written in React, HTML, and CSS.
 - HTML5
 - CSS3
 - React
+- API
 - Git
 - GitHub
 
 ## React functions used:
-- useState
-- useEffect
+- useState()
+- useEffect()
 - props
